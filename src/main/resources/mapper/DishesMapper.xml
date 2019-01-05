@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.mapper.IDocMapper" >
+    <select id="selectDishes" resultType="com.example.demo.bean.DocInfo">
+        select * from OLCrm_Documents
+    </select>
+
+    <insert id="insertDate">
+        INSERT INTO `OLCrm_Documents`
+        ( `classId`, `classPath`, `subject`, `subhead`, `author`, `source`,
+        `summary`, `icon`, `iconWidth`, `iconHeight`, `textPC`, `textMobile`,
+        `status`, `hits`, `published`, `userId`, `allowRemove`, `deleted`, `addTime`)
+        VALUES ( 1, '1,', '测试数据', '测试数据', '测试', '测试数据', '测试数据新闻添加',
+        '//localhost:8080/upload/img/2018-12/11/b920cec090a742bb49b6657538d1839e.png', 1920, 1080,
+        'https://bing.ioliu.cn/',
+        '', 1, 3,now(), 0, '', 0, now())
+    </insert>
+
+    <insert id="into" parameterType="String">
+        insert into test (name) VALUES (#{name})
+    </insert>
+
+    <update id="update" >
+        update OLCrm_Documents set textMobile=textPC="
+欧联网1月4日电 据欧联通讯社报道，日前，一位63岁持意大利居留的华人男子，从意大利博洛尼亚机场入境，引起了边防警察的怀疑。警方经核实身份后，认定该男子为获刑在逃疑犯，随即将华人男子收监羁押。
+　据报道，当地时间1月1日，一名63岁的华人男子搭乘民航客机从伊斯坦布尔飞往到意大利，在从博洛尼亚马可尼机场边检口岸入境时，遭到了边防警察的拦截检查。
+　　据警方消息，入境华人男子在接受边防检查时，所出示的护照为刚刚换发不久的中国普通护照，意大利居留签发地为普拉托警察局。边防警察在询问入境者从业情况时，63岁的华人男子自称是一家中国广播电视台的记者。
+　　边防警察经调阅入境华人的意大利居留和户籍资料时发现，入境的华人男子曾涉嫌2009年破产商业欺诈，两年前被法院判处3年监禁。边防警察随即将入境华人移交警方处理。
+　　目前，从博洛尼亚入境的63岁华人，已被警方暂时交由博洛尼亚监狱羁押，涉案华人是否需要服刑将有待法院的进一步裁决。
+　　依据意大利法律，首次触犯法律刑期在5年以下的疑犯，在对社会治安不构成新的威胁情况下，特别是经济类刑案获刑者，原则上均不会收监服刑，且候审羁押时间最长不超过50天，倘若再犯则刑期合并收监服刑。华人男子如果是初次获刑完全大可不必潜逃，经济刑案获刑3年根本没有坐牢风险。(李思佳)"
+    </update>
+</mapper>
